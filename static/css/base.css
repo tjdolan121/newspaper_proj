@@ -1,0 +1,22 @@
+.custom-1 {
+  color: #212529;
+  text-decoration: none;
+}
+
+.custom-1:hover {
+    color: #212529;
+}
+
+.card {
+    text-align: center;
+}
+
+.jumbotron {
+    background-image: url('/static/img/jumbotron.jpg');
+    background-size: cover;
+    background-position-y: bottom;
+    height: 200px;
+    width: auto;
+    margin-top: 0;
+    text-align: center;
+}
