@@ -1,3 +1,24 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Bungee', cursive;
+    color: #f1f1ef
+}
+
+h6 {
+    color: #212529;
+}
+
+p {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #f1f1ef
+}
+
+li {
+    font-family: 'Lato', sans-serif;
+}
+
 .custom-1 {
   color: #212529;
   text-decoration: none;
@@ -7,16 +28,68 @@
     color: #212529;
 }
 
+.custom-2 {
+    text-align: center;
+}
+
+.custom-3 {
+  color: #212529;
+}
+
+.custom-4 {
+    color: #f1f1ef;
+    font-family: 'Bungee', cursive;
+}
+.btn {
+    background-color: #66b9bf;
+    outline-color: #66b9bf;
+    outline-style: dashed;
+}
+
+.navbar {
+    background-color: #66b9bf;
+}
+
 .card {
     text-align: center;
 }
 
+.card-header {
+    font-family: 'Bungee', cursive;
+    background-color: #66b9bf;
+}
+
+.card-body {
+    text-align: left;
+    font-family: 'Lato', sans-serif;
+    background-color: #dae3de
+}
+
+.list-group {
+    text-align: left;
+}
+
 .jumbotron {
-    background-image: url('/static/img/jumbotron.jpg');
+    /*background-image: url('/static/img/jumbotron.jpg');*/
     background-size: cover;
+    background-color: #e37222;
     background-position-y: bottom;
     height: 200px;
     width: auto;
     margin-top: 0;
+    text-align: center;
+}
+
+.jumbotron h1 {
+    font-style: italic;
+    font-family: 'Bungee', cursive;
+}
+
+.jumbotron p {
+    font-family: 'Lato', sans-serif;
+    font-style: oblique;
+}
+
+.article-entry {
     text-align: center;
 }

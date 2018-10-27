@@ -3,6 +3,11 @@
 {% block title %}Articles{% endblock title %}
 
 {% block content %}
+    <div class="jumbotron">
+  <h1 class="display-4">From Scratch.</h1>
+  <p class="lead">An app with tons of uses. Recipes, blogs, or portfolios.</p>
+  <p class="lead"></p>
+    </div>
     {% for article in object_list %}
         <div class="card">
             <div class="card-header">
@@ -11,21 +16,23 @@
             </div>
             <div class="card-body">
                 <div>
-                {{ article.body }}
+                    {{ article.body }}
                 </div>
-                <div>
+                <div class="custom-2">
                     <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>
                 </div>
             </div>
-            <div class="card-footer text-center text-muted">
+            <div class="card-footer">
+                <h6><strong>Comments on {{ article.title }}</strong></h6>
+            <ul class="list-group">
                 {% for comment in article.comments.all %}
-                    <p>
-                        <span class="font-weight-bold">{{ comment.author }} &middot;</span>
-                        {{ comment }}
-                    </p>
+                    <li class="list-group-item">
+                    <span class="font-weight-bold">{{ comment.author }} &middot;</span>{{ comment }}
+                    </li>
                 {% endfor %}
+            </ul>
             </div>
         </div>
-    <br />
-  {% endfor %}
+        <br />
+    {% endfor %}
 {% endblock content %}
