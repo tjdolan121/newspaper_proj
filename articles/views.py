@@ -1,10 +1,12 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.shortcuts import get_object_or_404, render, redirect  # NEW
 from django.core.exceptions import PermissionDenied
 from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
 from .models import Article
+from .forms import CommentForm  # NEW
 
 
 class ArticleListView(LoginRequiredMixin, ListView):
@@ -14,7 +16,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
 
 
 class ArticleDetailView(LoginRequiredMixin, DetailView):
-    model = Article
+    model = Article  # Added 'Comment'
     template_name = 'article_detail.html'
     login_url = 'login'
 
@@ -55,3 +57,17 @@ class ArticleCreateView(LoginRequiredMixin, CreateView):
         """Logged in user will be automatically considered the author"""
         form.instance.author = self.request.user
         return super().form_valid(form)
+
+
+def add_comment_to_article(request, pk):
+    article = get_object_or_404(Article, pk=pk)
+    if request.method == "POST":
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment = form.save(commit=False)
+            comment.article = article
+            comment.save()
+            return redirect('article_detail', pk=article.pk)
+    else:
+        form = CommentForm()
+    return render(request, 'add_comment_to_article.html', {'form': form})

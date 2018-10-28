@@ -19,4 +19,7 @@
             </p>
         {% endfor %}
     </div>
+    <div>
+        <p><a href="{% url 'add_comment_to_article' pk=article.pk %}">+ Add comment</a></p>
+    </div>
 {% endblock content %}
