@@ -3,12 +3,16 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<div class="jumbotron">
-  <h1 class="display-4">From Scratch.</h1>
-  <p class="lead">An app with tons of uses. Recipes, blogs, or portfolios.</p>
-  <p class="lead">
-    <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
-    role="button">Take a look inside!</a>
-  </p>
-</div>
+
+    <div class="jumbotron">
+        <div class="container">
+            <h1 class="display-4">GRECO-AMERICAN BARBELL CLUB</h1>
+            <div><a class="entrance-link" href="{% url 'article_list' %}" role="button">Members Click Here</a></div>
+            <img src="/static/img/Logo.png" alt="logo">
+            <p class="lead">
+
+            </p>
+        </div>
+    </div>
+
 {% endblock content %}

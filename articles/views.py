@@ -6,7 +6,7 @@ from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
 from .models import Article
-from .forms import CommentForm  # NEW
+from .forms import CommentForm
 
 
 class ArticleListView(LoginRequiredMixin, ListView):
@@ -65,6 +65,7 @@ def add_comment_to_article(request, pk):
         form = CommentForm(request.POST)
         if form.is_valid():
             comment = form.save(commit=False)
+            comment.author = request.user
             comment.article = article
             comment.save()
             return redirect('article_detail', pk=article.pk)
