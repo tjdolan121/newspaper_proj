@@ -14,7 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls import url
 from django.urls import path, include
+from markdownx import urls as markdownx
 
 
 urlpatterns = [
@@ -23,4 +25,5 @@ urlpatterns = [
     path('users/', include('django.contrib.auth.urls')),
     path('articles/', include('articles.urls')),
     path('', include('pages.urls')),
+    url(r'^markdownx/', include(markdownx)),
 ]

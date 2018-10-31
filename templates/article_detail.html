@@ -3,11 +3,11 @@
 {% block content %}
     <div class="card">
         <div class="card-header">
-            <h2>{{ object.title }}</h2>
-            <p>by {{ object.author }} | {{ object.date }}</p>
+            <h2>{{ article.title }}</h2>
+            <p>by {{ article.author }} | {{ article.date }}</p>
         </div>
         <div class="card-body">
-            <p>{{ object.body }}</p>
+            <p>{{ article.formatted_markdown|safe }}</p>
             <p><a href="{% url 'article_edit' article.pk %}">Edit</a> |
                 <a href="{% url 'article_delete' article.pk %}">Delete</a></p>
             <p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>

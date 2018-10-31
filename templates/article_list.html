@@ -16,7 +16,7 @@
             </div>
             <div class="card-body">
                 <div>
-                    {{ article.body }}
+                    {{ article.formatted_markdown|safe }}
                 </div>
                 <div class="custom-2">
                     <a href="{% url 'article_edit' article.pk %}">Edit</a> | <a href="{% url 'article_delete' article.pk %}">Delete</a>

@@ -1,4 +1,5 @@
 from django.contrib import admin
+from markdownx.admin import MarkdownxModelAdmin
 
 from .models import Article, Comment
 
@@ -14,5 +15,5 @@ class ArticleAdmin(admin.ModelAdmin):
     ]
 
 
-admin.site.register(Article, ArticleAdmin)
+admin.site.register(Article, MarkdownxModelAdmin)
 admin.site.register(Comment)
