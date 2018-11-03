@@ -114,3 +114,7 @@ li {
     font-family: 'Lato', sans-serif;
     font-style: oblique;
 }
+
+.dropdown-menu-right {
+    background-color: #f1f1ef;
+}
