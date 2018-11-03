@@ -21,7 +21,7 @@ li {
     font-family: 'Lato', sans-serif;
 }
 
-.login {
+.page-title {
     color: #212529;
 }
 
@@ -59,10 +59,6 @@ li {
 
 .btn:hover {
     background-color: #54dadf;
-}
-
-.navbar {
-    background-color: #2a2a2a;
 }
 
 .entrance-link  {
@@ -115,6 +111,3 @@ li {
     font-style: oblique;
 }
 
-.dropdown-menu-right {
-    background-color: #f1f1ef;
-}

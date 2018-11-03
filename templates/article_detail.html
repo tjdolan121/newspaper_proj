@@ -12,17 +12,17 @@
                 <a href="{% url 'article_delete' article.pk %}">Delete</a></p>
             <p>Back to <a href="{% url 'article_list' %}">All Articles</a>.</p>
         </div>
-            <div class="card-footer">
-                <h6><strong>Stats for {{ article.title }}</strong></h6>
-                <h6><a href="{% url 'add_comment_to_article' pk=article.pk %}">+ Add your stats</a></h6>
-                <ul class="list-group">
-                    {% for comment in article.comments.all %}
-                        <li class="list-group-item">
-                            <span class="font-weight-bold">{{ comment.author }} &middot;</span>{{ comment }}
-                        </li>
-                    {% endfor %}
-                </ul>
-            </div>
+        <div class="card-footer">
+            <h6><strong>Stats for {{ article.title }}</strong></h6>
+            <h6><a href="{% url 'add_comment_to_article' pk=article.pk %}">+ Add your stats</a></h6>
+            <ul class="list-group">
+                {% for comment in article.comments.all %}
+                    <li class="list-group-item">
+                        <span class="font-weight-bold">{{ comment.author }} &middot;</span>{{ comment }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
     </div>
 
 {% endblock content %}

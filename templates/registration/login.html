@@ -3,11 +3,11 @@
 {% block title %}Log In{% endblock title %}
 
 {% block content %}
-<h2 class="login">Log In</h2>
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button class="btn btn-success ml-2" type="submit">Log In</button>
-    <a href="{% url 'password_reset' %}" class="btn btn-primary ml-2">Forgot Password?</a>
-</form>
+    <h2 class="page-title">Log In</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-success ml-2" type="submit">Log In</button>
+        <a href="{% url 'password_reset' %}" class="btn btn-primary ml-2">Forgot Password?</a>
+    </form>
 {% endblock content %}
