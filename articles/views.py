@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import UpdateView, DeleteView, CreateView
 from django.urls import reverse_lazy
 
-from .models import Article
+from .models import Article, Comment
 from .forms import CommentForm
 
 
@@ -72,3 +72,29 @@ def add_comment_to_article(request, pk):
     else:
         form = CommentForm()
     return render(request, 'add_comment_to_article.html', {'form': form})
+
+
+class CommentUpdateView(LoginRequiredMixin, UpdateView):
+    model = Comment
+    fields = ('comment', )
+    template_name = 'comment_edit.html'
+    login_url = 'login'
+
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        if obj.author != self.request.user:
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)
+
+
+class CommentDeleteView(LoginRequiredMixin, DeleteView):
+    model = Comment
+    template_name = 'comment_delete.html'
+    success_url = reverse_lazy('article_list')
+    login_url = 'login'
+
+    def dispatch(self, request, *args, **kwargs):
+        obj = self.get_object()
+        if obj.author != self.request.user:
+            raise PermissionDenied
+        return super().dispatch(request, *args, **kwargs)

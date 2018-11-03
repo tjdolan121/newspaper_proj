@@ -20,6 +20,10 @@
                     <li class="list-group-item">
                         <span class="font-weight-bold">{{ comment.author }} &middot;</span>{{ comment }}
                     </li>
+                    <li class="list-group-item">
+                        <p><a href="{% url 'comment_edit' comment.pk %}">Edit</a> |
+                            <a href="{% url 'comment_delete' comment.pk %}">Delete</a></p>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
