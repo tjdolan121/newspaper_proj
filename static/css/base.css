@@ -116,10 +116,6 @@ li {
     margin-bottom: 20px;
 }
 
-.jumbotron-footer {
-    background-image: none;
-    margin-top: 100px;
-    background-color: #333A3F;
+.custom-5 {
     text-align: center;
-    height: 30px;
 }
