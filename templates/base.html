@@ -9,12 +9,12 @@
           crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Bungee|Lato" rel="stylesheet">
     <link href="{% static 'css/base.css' %}" rel="stylesheet">
-    <link rel="favicon icon" href="/static/img/Logo-Small.png">
+    <link rel="favicon icon" href="/static/img/ccglogosmall.png">
     <title>{% block title %}CCBC{% endblock title %}</title>
 </head>
 <body>
 <nav class="navbar navbar-dark bg-dark">
-    <a href="{% url 'article_list' %}" class="pull-left"><img src="/static/img/Logo-Small.png"></a>
+    <a href="{% url 'article_list' %}" class="pull-left"><img src="/static/img/ccglogosmall.png"></a>
     <a class="navbar-brand custom-4" href="{% url 'article_list' %}">GABC</a>
     {% if user.is_authenticated %}
         <ul class="navbar-nav mr-auto">
