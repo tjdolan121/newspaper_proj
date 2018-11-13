@@ -16,11 +16,6 @@
 <nav class="navbar navbar-dark bg-dark">
     <a href="{% url 'article_list' %}" class="pull-left"><img src="/static/img/ccglogosmall.png"></a>
     <a class="navbar-brand custom-4" href="{% url 'article_list' %}">CCF</a>
-    {% if user.is_authenticated %}
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item"><a href="{% url 'article_new' %}">+ New</a></li>
-        </ul>
-    {% endif %}
     <button class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarCollapse" aria-controls="navbarCollapse"
             aria-expanded="false" aria-label="Toggle navigation">

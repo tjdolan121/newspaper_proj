@@ -35,8 +35,10 @@
         </div>
         <br />
     {% endfor %}
-    {% if is_paginated %}
-        <div class="pagination">
+    <div class="jumbotron jumbotron-footer" style="margin-bottom:0">
+        <div class="container">
+            {% if is_paginated %}
+                <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
                     <a href="/articles?page={{ page_obj.previous_page_number }}">previous</a>
@@ -48,6 +50,13 @@
                     <a href="/articles?page={{ page_obj.next_page_number }}">next</a>
                 {% endif %}
             </span>
+                </div>
+            {% endif %}
+            {% if user.is_superuser %}
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a href="{% url 'article_new' %}">PTLs/UFPMs</a></li>
+                </ul>
+            {% endif %}
         </div>
-    {% endif %}
+    </div>
 {% endblock content %}
