@@ -13,6 +13,7 @@ class ArticleListView(LoginRequiredMixin, ListView):
     model = Article
     template_name = 'article_list.html'
     login_url = 'login'
+    paginate_by = 5
 
 
 class ArticleDetailView(LoginRequiredMixin, DetailView):
