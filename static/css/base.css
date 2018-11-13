@@ -111,3 +111,7 @@ li {
     font-style: oblique;
 }
 
+.pagination {
+    text-align: center;
+    margin-bottom: 20px;
+}
