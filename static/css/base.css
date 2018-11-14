@@ -117,9 +117,13 @@ li {
 }
 
 .custom-5 {
-    text-align: center;
+    text-align: center !important;
 }
 
 .page-links {
     text-align: center;
+}
+
+.footer {
+    background-color: #f1f1ef !important;
 }

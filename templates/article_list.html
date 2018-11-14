@@ -37,22 +37,16 @@
     {% endfor %}
     <div class="container custom-5">
         {% if is_paginated %}
-            <div class="pagination">
-                    <div class="page-links">
-                        {% if page_obj.has_previous %}
-                            <a href="/articles?page={{ page_obj.previous_page_number }}">previous</a>
-                        {% endif %}
-                        <span class="page-current">
-                            Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
-                        </span>
-                        {% if page_obj.has_next %}
-                            <a href="/articles?page={{ page_obj.next_page_number }}">next</a>
-                        {% endif %}
-                    </div>
-            </div>
+            {% if page_obj.has_previous %}
+                <a href="/articles?page={{ page_obj.previous_page_number }}">previous</a>
+            {% endif %}
+            <div>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</div>
+            {% if page_obj.has_next %}
+                <a href="/articles?page={{ page_obj.next_page_number }}">next</a>
+            {% endif %}
         {% endif %}
     </div>
-    <footer class="page-footer font-small gray">
+    <footer class="page-footer font-small">
         {% if user.is_superuser %}
             <div class="footer-copyright text-center py-3">PTLs/UFPMs:
                 <a href="{% url 'article_new' %}">Click Here</a>
