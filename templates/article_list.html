@@ -38,7 +38,7 @@
     <div class="container custom-5">
         {% if is_paginated %}
             <div class="pagination">
-                    <span class="page-links">
+                    <div class="page-links">
                         {% if page_obj.has_previous %}
                             <a href="/articles?page={{ page_obj.previous_page_number }}">previous</a>
                         {% endif %}
@@ -48,14 +48,15 @@
                         {% if page_obj.has_next %}
                             <a href="/articles?page={{ page_obj.next_page_number }}">next</a>
                         {% endif %}
-                    </span>
+                    </div>
             </div>
-        {% endif %}<br>
-        {% if user.is_authenticated %}
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item"><a href="{% url 'article_new' %}">PTLs/UFPMs</a></li>
-            </ul>
         {% endif %}
     </div>
-
+    <footer class="page-footer font-small gray">
+        {% if user.is_superuser %}
+            <div class="footer-copyright text-center py-3">PTLs/UFPMs:
+                <a href="{% url 'article_new' %}">Click Here</a>
+            </div>
+        {% endif %}
+    </footer>
 {% endblock content %}
