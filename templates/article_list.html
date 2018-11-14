@@ -40,7 +40,7 @@
             {% if page_obj.has_previous %}
                 <a href="/articles?page={{ page_obj.previous_page_number }}">previous</a>
             {% endif %}
-            <div>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</div>
+            <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
             {% if page_obj.has_next %}
                 <a href="/articles?page={{ page_obj.next_page_number }}">next</a>
             {% endif %}
